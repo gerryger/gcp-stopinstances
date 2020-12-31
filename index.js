@@ -1,5 +1,11 @@
+const debug = require('@google-cloud/debug-agent').start({ allowExpressions: true });
 const Compute = require('@google-cloud/compute');
 const compute = new Compute();
+
+debug.isReady().then(() => {
+    debugInitialized = true
+    console.log("Debugger is initialize")
+});
 
 /**
  * Stops Compute Engine instances.
